@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ATMApplication.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">atm</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">ATMApplication.java</span></div><h1>ATMApplication.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
+
+<span class="fc" id="L7">public class ATMApplication {</span>
+    private static boolean isNumber(String input) {
+        try {
+<span class="fc" id="L10">            parseInt(input);</span>
+<span class="fc" id="L11">        } catch(Exception e) {</span>
+<span class="fc" id="L12">            System.out.println(&quot;Input is not a number!&quot;);</span>
+<span class="fc" id="L13">            return false;</span>
+<span class="fc" id="L14">        }</span>
+<span class="fc" id="L15">        return true;</span>
+    }
+
+    public static void main(String[] args) {
+<span class="fc" id="L19">        ATMService atmService = new ATMService();</span>
+<span class="fc" id="L20">        Scanner scanner = new Scanner(System.in);</span>
+<span class="fc" id="L21">        boolean isExit = false;</span>
+
+<span class="fc" id="L23">        System.out.println(&quot;```bash&quot;);</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        while (!isExit) {</span>
+<span class="fc" id="L25">            String rawInput = scanner.nextLine();</span>
+<span class="fc" id="L26">            String[] splitInput = rawInput.split(&quot;\\s+&quot;);</span>
+
+<span class="fc bfc" id="L28" title="All 7 branches covered.">            switch (splitInput[0]) {</span>
+                case &quot;login&quot;:
+<span class="fc" id="L30">                    atmService.login(splitInput[1]);</span>
+<span class="fc" id="L31">                    break;</span>
+                case &quot;deposit&quot;:
+<span class="fc bfc" id="L33" title="All 2 branches covered.">                    if(!isNumber(splitInput[1])) break;</span>
+
+<span class="fc" id="L35">                    atmService.deposit(parseInt(splitInput[1]));</span>
+<span class="fc" id="L36">                    break;</span>
+                case &quot;withdraw&quot;:
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                    if(!isNumber(splitInput[1])) break;</span>
+
+<span class="fc" id="L40">                    atmService.withdraw(parseInt(splitInput[1]));</span>
+<span class="fc" id="L41">                    break;</span>
+                case &quot;transfer&quot;:
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                    if(!isNumber(splitInput[2])) break;</span>
+
+<span class="fc" id="L45">                    atmService.transfer(splitInput[1], parseInt(splitInput[2]));</span>
+<span class="fc" id="L46">                    break;</span>
+                case &quot;logout&quot;:
+<span class="fc" id="L48">                    atmService.logout();</span>
+<span class="fc" id="L49">                    break;</span>
+                case &quot;exit&quot;:
+<span class="fc" id="L51">                    isExit = true;</span>
+<span class="fc" id="L52">                    break;</span>
+                default:
+<span class="fc" id="L54">                    System.out.println(&quot;Unrecognized command!&quot;);</span>
+            }
+<span class="fc" id="L56">        }</span>
+<span class="fc" id="L57">        System.out.println(&quot;```&quot;);</span>
+<span class="fc" id="L58">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
