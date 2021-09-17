@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.ATMServiceTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2021-09-17T19:34:46" hostname="LAPTOP-S41ONJT4" time="0.122">
+<testsuite name="com.example.ATMServiceTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2021-09-17T20:31:03" hostname="LAPTOP-S41ONJT4" time="0.093">
   <properties/>
-  <testcase name="Transfer less than owed balance" classname="com.example.ATMServiceTest" time="0.032"/>
-  <testcase name="Deposit more than owed balance" classname="com.example.ATMServiceTest" time="0.006"/>
+  <testcase name="Transfer less than owed balance" classname="com.example.ATMServiceTest" time="0.023"/>
+  <testcase name="Deposit more than owed balance" classname="com.example.ATMServiceTest" time="0.005"/>
   <testcase name="Transfer less than balance" classname="com.example.ATMServiceTest" time="0.005"/>
-  <testcase name="First time login" classname="com.example.ATMServiceTest" time="0.004"/>
+  <testcase name="First time login" classname="com.example.ATMServiceTest" time="0.002"/>
   <testcase name="Self transfer" classname="com.example.ATMServiceTest" time="0.003"/>
-  <testcase name="Deposit less than owed balance" classname="com.example.ATMServiceTest" time="0.005"/>
-  <testcase name="Transfer more than zero balance" classname="com.example.ATMServiceTest" time="0.002"/>
+  <testcase name="Deposit less than owed balance" classname="com.example.ATMServiceTest" time="0.002"/>
+  <testcase name="Transfer more than zero balance" classname="com.example.ATMServiceTest" time="0.003"/>
   <testcase name="Login on owed from account" classname="com.example.ATMServiceTest" time="0.002"/>
   <testcase name="Logout" classname="com.example.ATMServiceTest" time="0.002"/>
-  <testcase name="Login on owed to account" classname="com.example.ATMServiceTest" time="0.004"/>
+  <testcase name="Login on owed to account" classname="com.example.ATMServiceTest" time="0.002"/>
   <testcase name="Deposit" classname="com.example.ATMServiceTest" time="0.002"/>
-  <testcase name="Insufficient withdraw" classname="com.example.ATMServiceTest" time="0.003"/>
-  <testcase name="Transfer to invalid account" classname="com.example.ATMServiceTest" time="0.006"/>
-  <testcase name="Transfer more than owed balance" classname="com.example.ATMServiceTest" time="0.005"/>
-  <testcase name="Withdraw" classname="com.example.ATMServiceTest" time="0.005"/>
-  <testcase name="Transfer more than balance" classname="com.example.ATMServiceTest" time="0.003"/>
+  <testcase name="Insufficient withdraw" classname="com.example.ATMServiceTest" time="0.002"/>
+  <testcase name="Transfer to invalid account" classname="com.example.ATMServiceTest" time="0.002"/>
+  <testcase name="Transfer more than owed balance" classname="com.example.ATMServiceTest" time="0.003"/>
+  <testcase name="Withdraw" classname="com.example.ATMServiceTest" time="0.001"/>
+  <testcase name="Transfer more than balance" classname="com.example.ATMServiceTest" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

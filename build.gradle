@@ -1,6 +1,20 @@
 plugins {
+    id 'application'
     id 'java'
     id 'jacoco'
+}
+
+apply plugin : "java"
+ext {
+    javaMainClass = "com.example.ATMApplication"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+run {
+    standardInput = System.in
 }
 
 group 'org.example'

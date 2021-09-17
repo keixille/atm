@@ -8,7 +8,7 @@ import static java.lang.Integer.parseInt;
     private static boolean isNumber(String input) {
         try {
 <span class="fc" id="L10">            parseInt(input);</span>
-<span class="fc" id="L11">        } catch(Exception e) {</span>
+<span class="fc" id="L11">        } catch (Exception e) {</span>
 <span class="fc" id="L12">            System.out.println(&quot;Input is not a number!&quot;);</span>
 <span class="fc" id="L13">            return false;</span>
 <span class="fc" id="L14">        }</span>
@@ -30,17 +30,17 @@ import static java.lang.Integer.parseInt;
 <span class="fc" id="L30">                    atmService.login(splitInput[1]);</span>
 <span class="fc" id="L31">                    break;</span>
                 case &quot;deposit&quot;:
-<span class="fc bfc" id="L33" title="All 2 branches covered.">                    if(!isNumber(splitInput[1])) break;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">                    if (!isNumber(splitInput[1])) break;</span>
 
 <span class="fc" id="L35">                    atmService.deposit(parseInt(splitInput[1]));</span>
 <span class="fc" id="L36">                    break;</span>
                 case &quot;withdraw&quot;:
-<span class="fc bfc" id="L38" title="All 2 branches covered.">                    if(!isNumber(splitInput[1])) break;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                    if (!isNumber(splitInput[1])) break;</span>
 
 <span class="fc" id="L40">                    atmService.withdraw(parseInt(splitInput[1]));</span>
 <span class="fc" id="L41">                    break;</span>
                 case &quot;transfer&quot;:
-<span class="fc bfc" id="L43" title="All 2 branches covered.">                    if(!isNumber(splitInput[2])) break;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                    if (!isNumber(splitInput[2])) break;</span>
 
 <span class="fc" id="L45">                    atmService.transfer(splitInput[1], parseInt(splitInput[2]));</span>
 <span class="fc" id="L46">                    break;</span>
