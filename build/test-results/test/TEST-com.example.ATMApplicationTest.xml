@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.ATMApplicationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-18T00:36:15" hostname="LAPTOP-S41ONJT4" time="0.129">
-  <properties/>
-  <testcase name="Checking input command" classname="com.example.ATMApplicationTest" time="0.129"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
