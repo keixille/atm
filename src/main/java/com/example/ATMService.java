@@ -7,6 +7,7 @@ public class ATMService {
     private HashMap<String, String> oweToTable = new HashMap<>();
     private HashMap<String, String> oweFromTable = new HashMap<>();
     private Account currentAccount = null;
+    private Utils utils = new Utils();
 
     private boolean isCannotTransfer(String targetName) {
         if (!accountTable.containsKey(targetName)) {
@@ -33,18 +34,16 @@ public class ATMService {
         }
         currentAccount = accountTable.get(name);
 
-        System.out.println("Hello, " + currentAccount.getName() + "!");
-        System.out.println("Your balance is $" + currentAccount.getBalance());
+        utils.messageHello(currentAccount.getName());
+        utils.messageCurrentBalance(currentAccount.getBalance());
 
         if (currentAccount.getOwedBalance() > 0) {
             Account owedToAccount = accountTable.get(oweToTable.get(name));
-
-            System.out.println("Owed $" + currentAccount.getOwedBalance() + " to " + owedToAccount.getName());
+            utils.messageOwedTo(currentAccount.getOwedBalance(), owedToAccount.getName());
         } else {
             if (oweFromTable.containsKey(name)) {
                 Account owedFromAccount = accountTable.get(oweFromTable.get(name));
-
-                System.out.println("Owed $" + owedFromAccount.getOwedBalance() + " from " + owedFromAccount.getName());
+                utils.messageOwedFrom(owedFromAccount.getOwedBalance(), owedFromAccount.getName());
             }
         }
     }
@@ -57,18 +56,17 @@ public class ATMService {
             int movingBalance = currentAccount.increaseBalance(depositBalance);
             targetAccount.increaseBalance(movingBalance);
 
-            System.out.println("Transferred $" + movingBalance + " to " + targetAccount.getName());
-            System.out.println("Your balance is $" + currentAccount.getBalance());
+            utils.messageTransfer(movingBalance, targetAccount.getName());
+            utils.messageCurrentBalance(currentAccount.getBalance());
             if (currentAccount.getOwedBalance() > 0) {
-                System.out.println("Owed $" + currentAccount.getOwedBalance() + " to " + targetName);
+                utils.messageOwedTo(currentAccount.getOwedBalance(), targetName);
             } else {
                 oweToTable.remove(currentAccount.getName());
                 oweFromTable.remove(targetName);
             }
         } else {
             currentAccount.increaseBalance(depositBalance);
-
-            System.out.println("Your balance is $" + currentAccount.getBalance());
+            utils.messageCurrentBalance(currentAccount.getBalance());
         }
     }
 
@@ -77,27 +75,27 @@ public class ATMService {
 
         if (deductedBalance >= 0) {
             currentAccount.decreaseBalance(withdrawBalance);
-
-            System.out.println("Your balance is $" + currentAccount.getBalance());
+            utils.messageCurrentBalance(currentAccount.getBalance());
         } else {
             System.out.println("Insufficient balance to withdraw!");
         }
     }
 
     public void transfer(String targetName, int transferBalance) {
-        if(isCannotTransfer(targetName)) return;
+        if (isCannotTransfer(targetName)) return;
 
         if (oweFromTable.containsKey(currentAccount.getName())) {
             Account owedFromAccount = accountTable.get(oweFromTable.get(currentAccount.getName()));
+
             int movingBalance = owedFromAccount.increaseBalance(transferBalance);
-            if(transferBalance > movingBalance) {
+            if (transferBalance > movingBalance) {
                 currentAccount.decreaseBalance(transferBalance - movingBalance);
-                System.out.println("Transferred $" + (transferBalance - movingBalance) + " to " + owedFromAccount.getName());
+                utils.messageTransfer((transferBalance - movingBalance), owedFromAccount.getName());
             }
 
-            System.out.println("Your balance is $" + currentAccount.getBalance());
-            if(owedFromAccount.getOwedBalance() > 0) {
-                System.out.println("Owed $" + owedFromAccount.getOwedBalance() + " from " + owedFromAccount.getName());
+            utils.messageCurrentBalance(currentAccount.getBalance());
+            if (owedFromAccount.getOwedBalance() > 0) {
+                utils.messageOwedFrom(owedFromAccount.getOwedBalance(), owedFromAccount.getName());
             } else {
                 oweToTable.remove(targetName);
                 oweFromTable.remove(currentAccount.getName());
@@ -113,16 +111,16 @@ public class ATMService {
                 oweFromTable.put(targetAccount.getName(), currentAccount.getName());
             }
 
-            System.out.println("Transferred $" + movingBalance + " to " + targetAccount.getName());
-            System.out.println("Your balance is $" + currentAccount.getBalance());
+            utils.messageTransfer(movingBalance, targetAccount.getName());
+            utils.messageCurrentBalance(currentAccount.getBalance());
             if (currentAccount.getOwedBalance() > 0) {
-                System.out.println("Owed $" + currentAccount.getOwedBalance() + " to " + targetAccount.getName());
+                utils.messageOwedTo(currentAccount.getOwedBalance(), targetAccount.getName());
             }
         }
     }
 
     public void logout() {
-        System.out.println("Goodbye, " + currentAccount.getName() + "!");
+        utils.messageGoodbye(currentAccount.getName());
         currentAccount = null;
     }
 }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.AccountTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-09-17T20:31:02" hostname="LAPTOP-S41ONJT4" time="0.135">
+<testsuite name="com.example.AccountTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-09-18T00:36:15" hostname="LAPTOP-S41ONJT4" time="0.146">
   <properties/>
-  <testcase name="Get name, balance, owed balance" classname="com.example.AccountTest" time="0.103"/>
+  <testcase name="Get name, balance, owed balance" classname="com.example.AccountTest" time="0.107"/>
   <testcase name="Increase balance less than owed balance" classname="com.example.AccountTest" time="0.002"/>
-  <testcase name="Transfer balance when decrease balance more than init balance" classname="com.example.AccountTest" time="0.003"/>
-  <testcase name="Transfer balance when increase balance less than owed balance" classname="com.example.AccountTest" time="0.002"/>
-  <testcase name="Increase balance" classname="com.example.AccountTest" time="0.002"/>
+  <testcase name="Transfer balance when decrease balance more than init balance" classname="com.example.AccountTest" time="0.002"/>
+  <testcase name="Transfer balance when increase balance less than owed balance" classname="com.example.AccountTest" time="0.003"/>
+  <testcase name="Increase balance" classname="com.example.AccountTest" time="0.003"/>
   <testcase name="Transfer balance when decrease balance less than init balance" classname="com.example.AccountTest" time="0.002"/>
-  <testcase name="Decrease balance" classname="com.example.AccountTest" time="0.001"/>
-  <testcase name="Increase balance more than owed balance" classname="com.example.AccountTest" time="0.001"/>
-  <testcase name="Transfer balance when increase balance more than owed balance" classname="com.example.AccountTest" time="0.002"/>
+  <testcase name="Decrease balance" classname="com.example.AccountTest" time="0.003"/>
+  <testcase name="Increase balance more than owed balance" classname="com.example.AccountTest" time="0.003"/>
+  <testcase name="Transfer balance when increase balance more than owed balance" classname="com.example.AccountTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

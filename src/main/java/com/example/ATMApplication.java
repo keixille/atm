@@ -5,18 +5,10 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class ATMApplication {
-    private static boolean isNumber(String input) {
-        try {
-            parseInt(input);
-        } catch (Exception e) {
-            System.out.println("Input is not a number!");
-            return false;
-        }
-        return true;
-    }
-
     public static void main(String[] args) {
         ATMService atmService = new ATMService();
+        Utils utils = new Utils();
+
         Scanner scanner = new Scanner(System.in);
         boolean isExit = false;
 
@@ -30,17 +22,17 @@ public class ATMApplication {
                     atmService.login(splitInput[1]);
                     break;
                 case "deposit":
-                    if (!isNumber(splitInput[1])) break;
+                    if (!utils.isNumber(splitInput[1])) break;
 
                     atmService.deposit(parseInt(splitInput[1]));
                     break;
                 case "withdraw":
-                    if (!isNumber(splitInput[1])) break;
+                    if (!utils.isNumber(splitInput[1])) break;
 
                     atmService.withdraw(parseInt(splitInput[1]));
                     break;
                 case "transfer":
-                    if (!isNumber(splitInput[2])) break;
+                    if (!utils.isNumber(splitInput[2])) break;
 
                     atmService.transfer(splitInput[1], parseInt(splitInput[2]));
                     break;

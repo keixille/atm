@@ -22,7 +22,7 @@ public class ATMApplicationTest {
     }
 
     @Test
-    @DisplayName("Get name, balance, owed balance")
+    @DisplayName("Checking input command")
     void commandTest() {
         String inputLogin = "login Alice\n";
         String inputDeposit = "deposit 100\n";
